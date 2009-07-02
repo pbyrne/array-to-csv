@@ -1,0 +1,13 @@
+Adds Array#to_csv method that converts the contents of the array to CSV format.
+
+Examples:
+
+    [['a', 'b'], ['c', 'd']].to_csv
+    #=> "a,b\nc,d"
+    ['Report on somesuch', 
+      ['name', 'value'],
+      ['foo', 156],
+      ['bar', 24]].to_csv
+    #=> "Report on somesuch\nname,value\nfoo,156\nbar,24"
+
+This gem is released under a broad open-source license. See LICENSE for more details.
