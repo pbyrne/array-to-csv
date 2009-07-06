@@ -5,11 +5,11 @@ class Array
     for i in self
       # todo research case syntax, since these elsifs are ugly
       if i.is_a? Array
-        tmp << i.join(',')
+        tmp << i.map{|x| "\"#{x}\""}.join(',')
       elsif i.is_a? String
-        tmp << i
+        tmp << "\"#{i}\""
       elsif i.is_a? Hash
-        tmp << i.map{|k, v| "#{k}: #{v}"}.join(',')
+        tmp << i.map{|k, v| "\"#{k}: #{v}\""}.join(',')
       end
     end
     

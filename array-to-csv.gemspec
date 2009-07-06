@@ -1,6 +1,6 @@
 SPEC = Gem::Specification.new do |s|
   s.name = "array-to-csv"
-  s.version = "1.0.0"
+  s.version = "1.0.1"
   s.author = "Patrick Byrne"
   s.email = "code@patrickbyrne.net"
   s.homepage = "http://github.com/pbyrne/array-to-csv/"
