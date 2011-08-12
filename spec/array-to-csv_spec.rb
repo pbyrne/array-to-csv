@@ -1,4 +1,5 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'rspec'
+require 'array-to-csv'
 
 # TODO replace the it declarations with more meaningful and descriptive, er, descriptions
 describe Array do

@@ -1,7 +1,12 @@
-class Array
+require "array-to-csv/version"
+
+module ArrayToCsv
+end
+
+module Enumerable
   def to_csv
     tmp = []
-    
+
     for i in self
       # todo research case syntax, since these elsifs are ugly
       # todo investigate switching to %Q syntax to make less ugly
@@ -14,7 +19,7 @@ class Array
         tmp << i.map{|k, v| "\"#{k.to_s.escape_csv_quotes}: #{v.to_s.escape_csv_quotes}\""}.join(',')
       end
     end
-    
+
     tmp.join("\n")
   end
 end
