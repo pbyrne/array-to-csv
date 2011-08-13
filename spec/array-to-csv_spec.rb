@@ -50,7 +50,12 @@ describe Array do
       it "correctly escapes double quotes in hashes" do
         data = [{ :url => 'a href="foo"', :style => 'link rel="bar"'}]
         
-        data.to_csv.should == %Q("url: a href=""foo""","style: link rel=""bar""")
+        # splitting up instead of checking the entire string, since in ruby
+        # 1.8.X, hashes aren't ordered, so might not always come out in the
+        # desired order:
+        #    %Q("url: a href=""foo""","style: link rel=""bar""")
+        data.to_csv.should include %Q("url: a href=""foo""")
+        data.to_csv.should include %Q("style: link rel=""bar""")
       end
     end
   end
